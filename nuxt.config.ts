@@ -1,3 +1,3 @@
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', '@nuxtjs/storybook'],
 })

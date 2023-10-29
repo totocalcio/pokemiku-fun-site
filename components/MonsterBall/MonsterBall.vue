@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
 // #region constants
 const SHAKE_TIME = 3000
 // #endregion
@@ -8,11 +6,13 @@ const SHAKE_TIME = 3000
 // #region reactive data
 const ariaPressed = ref(false)
 const isShake = ref(false)
+const isOpen = ref(false)
 // #endregion
 
 // #region private methods
 const onClick = () => {
   ariaPressed.value = !ariaPressed.value
+  isOpen.value = true
   shakeBall()
 }
 const shakeBall = () => {
@@ -24,18 +24,22 @@ const shakeBall = () => {
 // #endregion
 </script>
 <template>
-  <button
-    type="button"
-    aria-label="メニュー"
-    :aria-pressed="ariaPressed"
-    @click="onClick"
-  >
-    <div class="monster-ball" :class="{ 'is-shake': isShake }">
-      <div class="top"></div>
-      <div class="button"></div>
-      <div class="bottom"></div>
-    </div>
-  </button>
+  <div class="monster-ball-box">
+    <button
+      class="monster-ball-button"
+      type="button"
+      aria-label="メニュー"
+      :aria-pressed="ariaPressed"
+      @click="onClick"
+    >
+      <div class="monster-ball" :class="{ 'is-shake': isShake }">
+        <div class="top"></div>
+        <div class="button"></div>
+        <div class="bottom"></div>
+      </div>
+    </button>
+    <MonsterBallMenu v-model:isOpen="isOpen" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -47,11 +51,19 @@ $ball_height: 60px;
 $button_size: 45cqmin;
 $button_inner_size: 18cqmin;
 
+.monster-ball-box {
+  position: relative;
+}
+
+.monster-ball-button {
+  position: relative;
+  z-index: 1;
+}
 @scope (.monster-ball) {
   :scope {
+    position: relative;
     width: $ball_width;
     height: $ball_height;
-    position: relative;
     border: 4px solid $border_color;
     border-radius: 50%;
     container-type: size;

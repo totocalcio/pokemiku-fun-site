@@ -1,5 +1,15 @@
 <script lang="ts" setup></script>
 
 <template>
-  <AtomsMonsterBall label="Click me!" />
+  <div class="layout">
+    <MonsterBall label="Click me!" />
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.layout {
+  display: grid;
+  height: 100svh;
+  place-items: center;
+}
+</style>
