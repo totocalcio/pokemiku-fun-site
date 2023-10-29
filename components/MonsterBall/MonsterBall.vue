@@ -1,11 +1,14 @@
 <script setup lang="ts">
 // #region constants
 const SHAKE_TIME = 3000
+const HIDDEN_TIME = 1000
 // #endregion
 
 // #region reactive data
 const isShake = ref(false)
 const isOpen = ref(false)
+const isClose = ref(false)
+const isDisabled = ref(false)
 // #endregion
 
 // #region private methods
@@ -21,12 +24,20 @@ const onOpen = () => {
   shakeBall()
 }
 const onClose = () => {
-  isOpen.value = false
+  isClose.value = true
+  isDisabled.value = true
+  setTimeout(() => {
+    isOpen.value = false
+    isClose.value = false
+    isDisabled.value = false
+  }, HIDDEN_TIME)
 }
 const shakeBall = () => {
   isShake.value = true
+  isDisabled.value = true
   setTimeout(() => {
     isShake.value = false
+    isDisabled.value = false
   }, SHAKE_TIME)
 }
 // #endregion
@@ -38,6 +49,7 @@ const shakeBall = () => {
       type="button"
       :aria-label="isOpen ? 'メニューを閉じる' : 'メニューを開く'"
       :aria-expanded="isOpen"
+      :disabled="isDisabled"
       @click="onClick"
     >
       <div class="monster-ball" :class="{ 'is-shake': isShake }">
@@ -46,7 +58,7 @@ const shakeBall = () => {
         <div class="bottom"></div>
       </div>
     </button>
-    <MonsterBallMenu v-if="isOpen" v-model:isOpen="isOpen" />
+    <MonsterBallMenu v-if="isOpen" :is-close="isClose" :is-open="isOpen" />
   </div>
 </template>
 
@@ -83,7 +95,6 @@ $button_inner_size: 18cqmin;
     background-color: color-mix(in srgb, $bg_color_top, black 10%);
     width: 100%;
     height: 50%;
-    border-radius: 100% 100% 0 0;
     clip-path: circle(63% at bottom);
     border-bottom: 2px solid $border_color;
   }
@@ -92,7 +103,6 @@ $button_inner_size: 18cqmin;
     background-color: $bg_color_bottom;
     width: 100%;
     height: 50%;
-    border-radius: 0 0 100% 100%;
     clip-path: circle(63% at top);
     border-top: 2px solid $border_color;
   }
