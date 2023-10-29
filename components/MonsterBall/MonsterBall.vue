@@ -4,16 +4,24 @@ const SHAKE_TIME = 3000
 // #endregion
 
 // #region reactive data
-const ariaPressed = ref(false)
 const isShake = ref(false)
 const isOpen = ref(false)
 // #endregion
 
 // #region private methods
 const onClick = () => {
-  ariaPressed.value = !ariaPressed.value
+  if (isOpen.value) {
+    onClose()
+    return
+  }
+  onOpen()
+}
+const onOpen = () => {
   isOpen.value = true
   shakeBall()
+}
+const onClose = () => {
+  isOpen.value = false
 }
 const shakeBall = () => {
   isShake.value = true
@@ -28,8 +36,8 @@ const shakeBall = () => {
     <button
       class="monster-ball-button"
       type="button"
-      aria-label="メニュー"
-      :aria-pressed="ariaPressed"
+      :aria-label="isOpen ? 'メニューを閉じる' : 'メニューを開く'"
+      :aria-expanded="isOpen"
       @click="onClick"
     >
       <div class="monster-ball" :class="{ 'is-shake': isShake }">
@@ -38,7 +46,7 @@ const shakeBall = () => {
         <div class="bottom"></div>
       </div>
     </button>
-    <MonsterBallMenu v-model:isOpen="isOpen" />
+    <MonsterBallMenu v-if="isOpen" v-model:isOpen="isOpen" />
   </div>
 </template>
 
