@@ -13,3 +13,6 @@
   place-items: center;
 }
 </style>
+<style>
+@import url('~/assets/css/destyle.css') layer(base);
+</style>
