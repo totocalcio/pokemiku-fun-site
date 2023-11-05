@@ -60,10 +60,12 @@ $angle-y: 340deg;
       img {
         width: 100%;
       }
-      &:hover {
-        z-index: 1;
-        scale: 1.5;
-        transition: 0.5s;
+      @media (hover) {
+        &:hover {
+          z-index: 1;
+          scale: 1.5;
+          transition: 0.5s;
+        }
       }
       &.is-open {
         animation: fadeIn 0.5s ease-in-out forwards;
