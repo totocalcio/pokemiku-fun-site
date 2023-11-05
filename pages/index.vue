@@ -11,6 +11,8 @@
   display: grid;
   height: 100svh;
   place-items: center;
+  container-type: inline-size;
+  container-name: layout;
 }
 </style>
 <style>

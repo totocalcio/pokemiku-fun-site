@@ -87,47 +87,50 @@ $button_inner_size: 18cqmin;
     border: 4px solid $border_color;
     border-radius: 50%;
     container-type: size;
+    container-name: monsterBall;
     &:hover {
       cursor: pointer;
     }
   }
-  .top {
-    background-color: color-mix(in srgb, $bg_color_top, black 10%);
-    width: 100%;
-    height: 50%;
-    clip-path: circle(63% at bottom);
-    border-bottom: 2px solid $border_color;
-  }
+  @container monsterBall (max-width: 100vw) {
+    .top {
+      background-color: color-mix(in srgb, $bg_color_top, black 10%);
+      width: 100%;
+      height: 50%;
+      clip-path: circle(63% at bottom);
+      border-bottom: 2px solid $border_color;
+    }
 
-  .bottom {
-    background-color: $bg_color_bottom;
-    width: 100%;
-    height: 50%;
-    clip-path: circle(63% at top);
-    border-top: 2px solid $border_color;
-  }
-
-  .button {
-    background-color: $bg_color_bottom;
-    width: $button_size;
-    height: $button_size;
-    border-radius: 50%;
-    border: 4px solid $border_color;
-    position: absolute;
-    top: calc(50% - ($button_size / 2));
-    left: calc(50% - ($button_size / 2));
-    z-index: 1;
-
-    &::before {
-      content: '';
-      border: 3px solid $border_color;
+    .bottom {
       background-color: $bg_color_bottom;
-      width: $button_inner_size;
-      height: $button_inner_size;
+      width: 100%;
+      height: 50%;
+      clip-path: circle(63% at top);
+      border-top: 2px solid $border_color;
+    }
+
+    .button {
+      background-color: $bg_color_bottom;
+      width: $button_size;
+      height: $button_size;
       border-radius: 50%;
+      border: 4px solid $border_color;
       position: absolute;
-      top: calc(50% - ($button_inner_size / 2));
-      left: calc(50% - ($button_inner_size / 2));
+      top: calc(50% - ($button_size / 2));
+      left: calc(50% - ($button_size / 2));
+      z-index: 1;
+
+      &::before {
+        content: '';
+        border: 3px solid $border_color;
+        background-color: $bg_color_bottom;
+        width: $button_inner_size;
+        height: $button_inner_size;
+        border-radius: 50%;
+        position: absolute;
+        top: calc(50% - ($button_inner_size / 2));
+        left: calc(50% - ($button_inner_size / 2));
+      }
     }
   }
 }
@@ -141,12 +144,12 @@ $button_inner_size: 18cqmin;
     rotate: 0;
   }
   25% {
-    translate: 10px 0;
-    rotate: 30deg;
-  }
-  50% {
     translate: -10px 0;
     rotate: -30deg;
+  }
+  50% {
+    translate: 10px 0;
+    rotate: 30deg;
   }
   75% {
     translate: 0;
