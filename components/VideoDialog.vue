@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const props = defineProps<{
   modelValue: boolean
+  url: string
+  title: string
 }>()
 const emits = defineEmits<{
   (e: 'update:modelValue', value: boolean): void
@@ -34,8 +36,33 @@ watch(
 </script>
 
 <template>
-  <dialog ref="dialogRef">
-    Dialog
+  <dialog ref="dialogRef" class="youtube-dialog">
+    <iframe
+      class="iframe"
+      :src="url"
+      :title="title"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
     <button type="button" @click="onClose">close</button>
   </dialog>
 </template>
+
+<style lang="scss" scope>
+@scope (.youtube-dialog) {
+  :scope {
+    width: 80vw;
+    &[open] {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @container layout (max-width: 768px) {
+    width: 90vw;
+  }
+  .iframe {
+    aspect-ratio: 16/9;
+  }
+}
+</style>

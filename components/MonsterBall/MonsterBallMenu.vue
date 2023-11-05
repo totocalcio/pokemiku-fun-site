@@ -38,7 +38,7 @@ const onClick = (index: number) => {
       <a href="#" @click="onClick(index)">
         <img :src="item.path" :alt="item.title" />
       </a>
-      <VideoDialog v-model="item.isClick" />
+      <VideoDialog v-model="item.isClick" :url="item.url" :title="item.title" />
     </li>
   </ul>
 </template>
@@ -59,6 +59,11 @@ $angle-y: 340deg;
       opacity: 0;
       img {
         width: 100%;
+      }
+      &:hover {
+        z-index: 1;
+        scale: 1.5;
+        transition: 0.5s;
       }
       &.is-open {
         animation: fadeIn 0.5s ease-in-out forwards;
