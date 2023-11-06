@@ -46,14 +46,12 @@ const onClick = (index: number) => {
 <style lang="scss" scoped>
 $ball_width: 60px;
 $ball_height: 60px;
-$angle-x: 200deg;
-$angle-y: 340deg;
 
 @scope (.monster-ball-menu-list) {
   @container layout (max-width:100vw) {
     .item {
       position: absolute;
-      width: clamp(150px, 20vw, 300px);
+      width: clamp(120px, 20vw, 300px);
       top: 50%;
       left: 50%;
       opacity: 0;
@@ -117,8 +115,8 @@ $angle-y: 340deg;
 
 @mixin fadeTranslate() {
   --angle: calc(200deg + calc(140deg / 4 * var(--index)));
-  --x: calc(cos(var(--angle)) * clamp(150px, 20vw, 250px));
-  --y: calc(sin(var(--angle)) * 300px);
+  --x: calc(cos(var(--angle)) * clamp(120px, 20vw, 300px));
+  --y: calc(sin(var(--angle)) * clamp(120px, 20vw, 300px));
   translate: calc(var(--x) - 50%) calc(var(--y) - 50%);
 }
 

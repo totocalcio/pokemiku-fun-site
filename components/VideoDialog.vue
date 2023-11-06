@@ -56,15 +56,16 @@ watch(
 }
 @scope (.youtube-dialog) {
   :scope {
+    padding: 0;
     width: 80vw;
     &[open] {
       display: flex;
       flex-direction: column;
       animation: fadeIn 0.5s ease-in-out forwards;
     }
-  }
-  @container layout (max-width: 768px) {
-    width: 90vw;
+    @media (width < 768px) {
+      width: 90vw;
+    }
   }
   .iframe {
     aspect-ratio: 16/9;
