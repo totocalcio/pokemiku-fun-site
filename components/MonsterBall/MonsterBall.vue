@@ -94,9 +94,6 @@ $button_inner_size: 18cqmin;
     border-radius: 50%;
     container-type: size;
     container-name: monsterBall;
-    &:hover {
-      cursor: pointer;
-    }
   }
   @container monsterBall (max-width: 100vw) {
     .top {
