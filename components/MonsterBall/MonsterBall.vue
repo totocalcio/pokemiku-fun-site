@@ -100,7 +100,7 @@ $button_inner_size: 18cqmin;
       background-color: color-mix(in srgb, $bg_color_top, black 10%);
       width: 100%;
       height: 50%;
-      clip-path: circle(63% at bottom);
+      clip-path: circle(64% at bottom);
       border-bottom: 2px solid $border_color;
     }
 
@@ -108,7 +108,7 @@ $button_inner_size: 18cqmin;
       background-color: $bg_color_bottom;
       width: 100%;
       height: 50%;
-      clip-path: circle(63% at top);
+      clip-path: circle(64% at top);
       border-top: 2px solid $border_color;
     }
 
