@@ -35,9 +35,9 @@ const onClick = (index: number) => {
       :class="{ 'is-open': isOpen && !isClose, 'is-close': isClose }"
       :style="{ '--index': index }"
     >
-      <a href="#" @click="onClick(index)">
+      <button type="button" class="button" @click="onClick(index)">
         <img :src="item.path" :alt="item.title" />
-      </a>
+      </button>
       <VideoDialog v-model="item.isClick" :url="item.url" :title="item.title" />
     </li>
   </ul>
@@ -61,6 +61,12 @@ $ball_height: 60px;
       }
       @media (hover) {
         &:hover {
+          z-index: 1;
+          scale: 1.5;
+        }
+      }
+      @supports selector(:has(*)) {
+        &:has(.button:focus) {
           z-index: 1;
           scale: 1.5;
         }
