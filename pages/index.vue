@@ -2,6 +2,7 @@
 
 <template>
   <div class="layout">
+    <HeadlineComponent />
     <MonsterBall label="Click me!" />
   </div>
 </template>
@@ -10,7 +11,7 @@
 .layout {
   display: grid;
   height: 100svh;
-  place-items: center;
+  place-content: center;
   container-type: inline-size;
   container-name: layout;
 }
