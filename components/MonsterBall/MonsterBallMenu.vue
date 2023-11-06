@@ -66,7 +66,7 @@ $ball_height: 60px;
         }
       }
       @supports selector(:has(*)) {
-        &:has(.button:focus) {
+        &:has(.button:focus-visible) {
           z-index: 1;
           scale: 1.5;
         }
