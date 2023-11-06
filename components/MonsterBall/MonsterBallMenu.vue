@@ -57,6 +57,7 @@ $angle-y: 340deg;
       top: 50%;
       left: 50%;
       opacity: 0;
+      transition: 0.25s;
       img {
         width: 100%;
       }
@@ -64,7 +65,6 @@ $angle-y: 340deg;
         &:hover {
           z-index: 1;
           scale: 1.5;
-          transition: 0.5s;
         }
       }
       &.is-open {

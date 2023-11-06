@@ -78,6 +78,12 @@ $button_inner_size: 18cqmin;
 .monster-ball-button {
   position: relative;
   z-index: 1;
+  transition: 0.25s;
+  @media (hover) {
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
 }
 @scope (.monster-ball) {
   :scope {

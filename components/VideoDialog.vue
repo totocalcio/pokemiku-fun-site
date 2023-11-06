@@ -38,6 +38,7 @@ watch(
 <template>
   <dialog ref="dialogRef" class="youtube-dialog">
     <iframe
+      autofocus
       class="iframe"
       :src="url"
       :title="title"
@@ -50,12 +51,16 @@ watch(
 </template>
 
 <style lang="scss" scope>
+.youtube-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 @scope (.youtube-dialog) {
   :scope {
     width: 80vw;
     &[open] {
       display: flex;
       flex-direction: column;
+      animation: fadeIn 0.5s ease-in-out forwards;
     }
   }
   @container layout (max-width: 768px) {
@@ -63,6 +68,15 @@ watch(
   }
   .iframe {
     aspect-ratio: 16/9;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 </style>
