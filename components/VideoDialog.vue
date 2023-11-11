@@ -46,7 +46,7 @@ watch(
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
     ></iframe>
-    <button type="button" @click="onClose">close</button>
+    <button type="button" class="button" @click="onClose">✕</button>
   </dialog>
 </template>
 
@@ -69,6 +69,22 @@ watch(
   }
   .iframe {
     aspect-ratio: 16/9;
+  }
+  .button {
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    font-size: 1.5rem;
+    background-color: #fff;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    transition: 0.25s;
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 }
 

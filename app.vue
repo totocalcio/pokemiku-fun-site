@@ -4,6 +4,6 @@
 
 <style>
 body {
-  /* background-color: #ddd; */
+  background-color: color-mix(in srgb, #c0ffee, #fff 80%);
 }
 </style>
