@@ -1,13 +1,24 @@
-<script lang="ts" setup></script>
-
 <template>
-  <div class="layout">
+  <header>
     <HeadlineComponent />
+  </header>
+  <main class="layout">
     <MonsterBall label="Click me!" />
-  </div>
+    <div class="warning">
+      使用しているブラウザ環境では見えません。最新のChromeなら多分見れます。
+    </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
+.warning {
+  color: red;
+}
+@scope (html) {
+  .warning {
+    display: none;
+  }
+}
 .layout {
   display: grid;
   height: 100svh;
