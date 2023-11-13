@@ -9,6 +9,9 @@ useSeoMeta({
   ogImage: '/assets/images/og.png',
   twitterCard: 'summary_large_image',
 })
+useHead({
+  htmlAttrs: { lang: 'ja' },
+})
 </script>
 
 <template>
