@@ -21,5 +21,6 @@ useHead({
 <style>
 body {
   background-color: color-mix(in srgb, #c0ffee, #fff 80%);
+  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 </style>
