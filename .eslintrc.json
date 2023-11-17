@@ -21,6 +21,9 @@
     "sourceType": "module"
   },
   "plugins": ["vue", "@typescript-eslint", "vuejs-accessibility"],
-  "rules": {},
+  "rules": {
+    "vuejs-accessibility/no-autofocus": "off",
+    "vue/no-multiple-template-root": "off"
+  },
   "ignorePatterns": ["node_modules", ".nuxt", ".vscode"]
 }
