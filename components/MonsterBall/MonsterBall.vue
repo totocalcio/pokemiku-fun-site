@@ -68,7 +68,7 @@ $bg_color_top: #b72730;
 $bg_color_bottom: #dcdbe0;
 $ball_width: 60px;
 $ball_height: 60px;
-$button_size: 45cqmin;
+$button_size: 46cqmin;
 $button_inner_size: 18cqmin;
 
 .monster-ball-box {
