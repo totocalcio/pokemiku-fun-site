@@ -8,6 +8,7 @@
     position: fixed;
     top: 8px;
     left: 8px;
+    z-index: 1;
   }
 }
 </style>
