@@ -36,7 +36,7 @@ const onClick = (index: number) => {
       :style="{ '--index': index }"
     >
       <button type="button" class="button" @click="onClick(index)">
-        <img :src="item.path" :alt="item.title" />
+        <img :src="item.path" :alt="`サムネイル ${item.title}`" />
       </button>
       <VideoDialog v-model="item.isClick" :url="item.url" :title="item.title" />
     </li>
