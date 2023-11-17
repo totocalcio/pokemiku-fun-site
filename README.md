@@ -1,26 +1,25 @@
-# Nuxt 3 Boilerplate
+# ポケミクファンサイト
 
-## Stack
+## 使用言語 / FW
 
-- Nuxt3
-- ESLint
-- Prettier
-- TypeScript
-- Tailwind
-- Pinia
-- Nuxt Image
-- Prisma
+- Vue.js / Nuxt3
 
-## Prisma init
+## CSS
 
-create .env
+比較的新しい、使用した CSS の機能。
 
-```
-DATABASE_URL="file:./dev.db"
-```
-
-## Renovate
-
-Delete if not needed
-
-- renovate.json
+- @layer
+- @scope
+- aspect-ratio
+- color-mix
+- CSS Trigonometric functions
+- Container Queries
+  - Container Size Queries
+  - Container Query Length Units
+- Media Queries
+  - Media Features(range)
+  - Interaction Media Features(hover)
+- Individual Transform Properties
+  - translate
+  - scale
+  - rotate
