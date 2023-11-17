@@ -1,10 +1,8 @@
 export default defineNuxtConfig({
   ssr: false,
 
-  modules: [
-    '@nuxt/image-edge',
-    //  '@nuxtjs/storybook'
-  ],
+  modules: [//  '@nuxtjs/storybook'
+  '@nuxt/image-edge', '@nuxtjs/robots'],
 
   devtools: {
     timeline: {
