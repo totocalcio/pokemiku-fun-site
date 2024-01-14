@@ -10,6 +10,7 @@ const emits = defineEmits<{
 
 // #region reactive data
 const dialogRef = ref<HTMLDialogElement | null>(null)
+const iframeRef = ref<HTMLIFrameElement | null>(null)
 // #endregion
 
 // #region methods
@@ -19,7 +20,16 @@ const openDialog = () => {
 
 const onClose = () => {
   dialogRef.value?.close()
+  stopYoutube()
   emits('update:modelValue', false)
+}
+
+const stopYoutube = () => {
+  const iframeContent = iframeRef.value?.contentWindow
+  iframeContent?.postMessage(
+    `{"event":"command","func":"stopVideo","args":""}`,
+    '*'
+  )
 }
 // #endregion
 
@@ -38,9 +48,10 @@ watch(
 <template>
   <dialog ref="dialogRef" class="youtube-dialog">
     <iframe
+      ref="iframeRef"
       autofocus
       class="iframe"
-      :src="url"
+      :src="`${url}?enablejsapi=1`"
       :title="title"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
