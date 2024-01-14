@@ -46,7 +46,14 @@ watch(
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
     ></iframe>
-    <button type="button" class="button" @click="onClose">✕</button>
+    <button
+      aria-label="ダイアログを閉じる"
+      type="button"
+      class="button"
+      @click="onClose"
+    >
+      ✕
+    </button>
   </dialog>
 </template>
 
