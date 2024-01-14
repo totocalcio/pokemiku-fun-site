@@ -21,7 +21,7 @@
 }
 .layout {
   display: grid;
-  height: 100svh;
+  height: 100dvh;
   place-content: center;
   container-type: inline-size;
   container-name: layout;

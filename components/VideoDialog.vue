@@ -57,18 +57,21 @@ watch(
 @scope (.youtube-dialog) {
   :scope {
     padding: 0;
-    width: 80vw;
+    aspect-ratio: 16/9;
+    width: 100dvmin;
+
     &[open] {
       display: flex;
       flex-direction: column;
       animation: fadeIn 0.5s ease-in-out forwards;
     }
     @media (width < 768px) {
-      width: 90vw;
+      width: calc(100dvmin - 4rem);
     }
   }
   .iframe {
-    aspect-ratio: 16/9;
+    width: 100%;
+    height: 100%;
   }
   .button {
     position: fixed;
