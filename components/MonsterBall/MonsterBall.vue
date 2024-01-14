@@ -9,6 +9,7 @@ const isShake = ref(false)
 const isOpen = ref(false)
 const isClose = ref(false)
 const isDisabled = ref(false)
+const isLoaded = ref(false)
 // #endregion
 
 // #region private methods
@@ -41,9 +42,15 @@ const shakeBall = () => {
   }, SHAKE_TIME)
 }
 // #endregion
+
+// #region lifecycle
+onMounted(() => {
+  isLoaded.value = true
+})
+// #endregion
 </script>
 <template>
-  <div class="monster-ball-box">
+  <div class="monster-ball-box" :class="{ 'is-load': isLoaded }">
     <button
       class="monster-ball-button"
       type="button"
@@ -140,6 +147,9 @@ $button_inner_size: 18cqmin;
 .is-shake {
   animation: shake 1s ease 3;
 }
+.is-load {
+  animation: roll 0.7s linear 3, move 2.1s linear;
+}
 
 @keyframes shake {
   0% {
@@ -157,6 +167,26 @@ $button_inner_size: 18cqmin;
   75% {
     translate: 0;
     rotate: 0;
+  }
+}
+@keyframes move {
+  0% {
+    margin-left: 100vw;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
+@keyframes roll {
+  from {
+    rotate: 360deg;
+  }
+  to {
+    rotate: 0deg;
   }
 }
 </style>

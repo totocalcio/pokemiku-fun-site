@@ -78,19 +78,28 @@ $ball_height: 60px;
         }
 
         &:nth-child(2) {
-          animation-delay: 0.25s;
+          animation-delay: 0.1s;
         }
 
         &:nth-child(3) {
-          animation-delay: 0.75s;
+          animation-delay: 0.25s;
         }
 
         &:nth-child(4) {
-          animation-delay: 1s;
+          animation-delay: 0.35s;
         }
 
         &:nth-child(5) {
+          animation-delay: 0.75s;
+        }
+        &:nth-child(6) {
+          animation-delay: 1.25s;
+        }
+        &:nth-child(7) {
           animation-delay: 1.75s;
+        }
+        &:nth-child(8) {
+          animation-delay: 2s;
         }
       }
       &.is-close {
