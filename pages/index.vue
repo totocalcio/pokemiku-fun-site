@@ -5,7 +5,7 @@
   <main class="layout">
     <MonsterBall label="Click me!" />
     <div class="warning">
-      使用しているブラウザ環境では見えません。最新のChromeなら多分見れます。
+      使用しているブラウザ環境では見えません。最新のChromeなら多分見れます。（スマホもきっと見えません。）
     </div>
   </main>
 </template>
