@@ -102,7 +102,7 @@ $button_inner_size: 18cqmin;
     container-type: size;
     container-name: monsterBall;
   }
-  @container monsterBall (max-width: 100vw) {
+  @container monsterBall (width > 0px) {
     .top {
       background-color: color-mix(in srgb, $bg_color_top, black 10%);
       width: 100%;

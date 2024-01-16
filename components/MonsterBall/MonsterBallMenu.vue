@@ -48,7 +48,7 @@ $ball_width: 60px;
 $ball_height: 60px;
 
 @scope (.monster-ball-menu-list) {
-  @container layout (max-width:100vw) {
+  @container layout (width > 0px) {
     .item {
       position: absolute;
       width: clamp(120px, 20vw, 300px);
